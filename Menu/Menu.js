@@ -1,20 +1,40 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out"
 ];
 
-function displayArticle() {
-  
+function displayArticle(array) {
+  const newMenu = document.createElement("div");
+  const menuList = document.createElement("ul");
+  const menuHidden = document.querySelector(".menu-button");
+  const header = document.querySelector(".header");
+  header.appendChild(newMenu);
+  newMenu.appendChild(menuList);
+
+  array.forEach(item => {
+    menuItem = document.createElement("li");
+    menuItem.textContent = item;
+    menuList.appendChild(menuItem);
+    return menuList;
+  });
+
+  newMenu.classList.add("menu");
+  menuHidden.addEventListener("click", event => {
+    console.log("opened", event.target);
+    newMenu.classList.toggle("menu--open");
+  });
+
+  return newMenu;
 }
+displayArticle(menuItems);
 
 /* 
-
   Step 1: Write a function that will create a menu component as seen below:
 
   <div class="menu">
@@ -37,3 +57,20 @@ function displayArticle() {
   Step 6: add the menu component to the DOM.
   
 */
+
+// let rubbishSmashChars = [
+//   {
+//     title: 'Gannondorf',
+//     date: 'November 28th 1986'
+//     firstParagraph: 'Gannondorf is a bully.',
+//     secondParagraph: 'I get killed when i try to gimp him offstage.'
+//     thirdParagraph: 'He needs to be nerfed cuz he killed me with 3 hits!'
+//   }
+//   {
+//     title: 'Ness',
+//     date: 'December 25th 1993'
+//     firstParagraph: 'Ness is actually Negan.',
+//     secondParagraph: 'I get killed when i try to gimp him while he/s PK Thundering back to ledge.'
+//     thirdParagraph: 'He needs to be nerfed cuz his yoyo and pk fire are hacks!'
+//   }
+// ]

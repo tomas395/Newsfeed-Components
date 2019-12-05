@@ -152,7 +152,6 @@ data.map(item => {
   document.querySelector(".articles").appendChild(createArticle(item));
 });
 
-
 // ↓ this is reference trash don't mind it ↓
 
 // const button = document.querySelector('#pushy');
@@ -176,3 +175,6 @@ data.map(item => {
 //   // 2. Change visibility of the content w/ 'toggle-on'
 //   panelContent.classList.toggle("toggle-on");
 // });
+
+
+
